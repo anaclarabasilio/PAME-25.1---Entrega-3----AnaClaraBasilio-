@@ -28,7 +28,7 @@ const [username, setUsername] = useState('');
             <FaLock className="icon"/>
         </div>
 
-        <button><Link to='/'><div className="cadast">Cadastre-se</div></Link></button>
+        <button><Link to='/' style={{ textDecoration: 'none' }}><div className="cadast" >Cadastre-se</div></Link></button>
  
         
       </form>
