@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart, FaSearch, FaHome, FaStar, FaEnvelope, FaCog, FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import img1casa1 from '../../assets/img1casa1.png'
 import "./Home.css";
 
 function Home() {
@@ -67,6 +68,7 @@ function Home() {
                 <span className="checkmark">Favoritar<a href="#">⭐</a></span>
                 <h1>Casa triplex com 6 suítes</h1>
                 <h2>Barra da Tijuca, 25.000</h2>
+                <img src={img1casa1} alt="" />
                 
               </div>
             </div>
