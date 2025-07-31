@@ -1,0 +1,327 @@
+/* Home.css - Estilos completos */
+
+/* Reset e estilos gerais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Estilos da Sidebar */
+.sidebar {
+  width: 280px;
+  background: #e6b892;
+  color: white;
+  padding: 20px 0;
+  transition: transform 0.3s ease;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  padding: 0 25px 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  font-size: 1rem;
+}
+
+.menu-item:hover {
+  background: #E9C7AB;
+  color: #fff;
+}
+
+.menu-icon {
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+
+.favoritos-count {
+  background: #d36d62;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  position: absolute;
+  right: 20px;
+}
+
+.close-sidebar {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.close-sidebar:hover {
+  transform: rotate(90deg);
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 280px;
+  min-height: 100vh;
+  transition: margin 0.3s;
+}
+
+.open-sidebar {
+  display: none;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.open-sidebar:hover {
+  background: #34495e;
+}
+
+/* Barra de busca */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 8px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-icon {
+  color: #7f8c8d;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Listagem de imóveis */
+.imoveis-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.casa-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.casa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.casa-imagem-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.casa-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.casa-card:hover .casa-imagem {
+  transform: scale(1.05);
+}
+
+.favorito-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.favorito-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.favorito-icon {
+  font-size: 1.2rem;
+}
+
+.favorito-icon.favoritado {
+  color: #e74c3c;
+}
+
+.casa-info {
+  padding: 25px;
+}
+
+.casa-info h1 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.casa-info h2 {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.casa-info p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.casa-detalhes {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: #34495e;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.casa-detalhes span {
+  background: #ecf0f1;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.ver-mais-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ver-mais-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .imoveis-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .open-sidebar {
+    display: block;
+  }
+  
+  .close-sidebar {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-bar {
+    width: 100%;
+  }
+  
+  .imoveis-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .casa-info {
+    padding: 20px;
+  }
+}
+
+.casa{
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+}
+
